@@ -1,6 +1,16 @@
 VerticalViewPager
 ===
-
+This is forked from kaelaela/VerticalViewPager
+ 
+Optimization of VerticalViewPager
+  <ul>
+     <li>Catching ViewPager internal bug: java.lang.IllegalArgumentException: pointerIndex out of range {@link CatchExceptionViewPager} </li>
+     <li>The vertical sliding optimization nesting {@link android.support.v4.view.ViewPager}</li>
+  </ul>
+ Edited by isanwenyu on 2016/9/13.<p>
+ Copyright (c) 2016 isanwenyu@163.com. All rights reserved.
+ 
+ 
 [![Build Status](https://travis-ci.org/kaelaela/VerticalViewPager.svg)](https://travis-ci.org/kaelaela/VerticalViewPager)
 [![Platform](http://img.shields.io/badge/platform-android-brightgreen.svg?style=flat)](http://developer.android.com/index.html)
 [![License](https://img.shields.io/badge/license-Apache%202-blue.svg)](https://www.apache.org/licenses/LICENSE-2.0)
@@ -40,14 +50,18 @@ dependencies {
 - [ ] Add more transformers.(Please contribute me!
 - [ ] Sticky header.
 
-## Me
+## Contributor
 
 Yuichi Maekawa(Kaelaela)
 * Twitter [@Yuichi0531](https://twitter.com/Yuichi0531)
 * kaelaela.31@gmail.com
 
+isanwenyu
+* github: [https://github.com/isanwenyu](https://github.com/isanwenyu)
+* email:[isanwenyu@163.com](isanwenyu@163.com)
 License
 -------
+    Copyright (C) 2016 isanwenyu@163.com
     Copyright (C) 2015 kaelaela
     Copyright (C) 2013 The Android Open Source Project
 

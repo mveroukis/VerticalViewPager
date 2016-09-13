@@ -15,12 +15,26 @@ package me.kaelaela.verticalviewpager;
  */
 
 import android.content.Context;
-import android.support.v4.view.ViewPager;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
+
 import me.kaelaela.verticalviewpager.transforms.DefaultTransformer;
 
-public class VerticalViewPager extends ViewPager {
+/**
+ * <pre>
+ * 优化的垂直的viewpager
+ * <ul>
+ *     <li>拦截系统ViewPager bug: java.lang.IllegalArgumentException: pointerIndex out of range {@link CatchExceptionViewPager} </li>
+ *     <li>嵌套{@link android.support.v4.view.ViewPager}垂直滑动优化</li>
+ * </ul>
+ * Edited by isanwenyu on 2016/9/13.<p>
+ * Copyright (c) 2016 isanwenyu@163.com. All rights reserved.
+ * </pre>
+ */
+public class VerticalViewPager extends CatchExceptionViewPager {
+
+    private float lastX;
+    private float lastY;
 
     public VerticalViewPager(Context context) {
         this(context, null);
@@ -45,10 +59,38 @@ public class VerticalViewPager extends ViewPager {
 
     @Override
     public boolean onInterceptTouchEvent(MotionEvent event) {
-        boolean intercept = super.onInterceptTouchEvent(swapTouchEvent(event));
-        //If not intercept, touch event should not be swapped.
-        swapTouchEvent(event);
-        return intercept;
+        boolean isVertical = false;
+        boolean intercept = false;
+        try {
+            float x = event.getX();
+            float y = event.getY();
+            switch (event.getAction()) {
+                case MotionEvent.ACTION_DOWN:
+                    lastX = x;
+                    lastY = y;
+                    break;
+                case MotionEvent.ACTION_MOVE:
+                    float dx = x - lastX;
+                    float dy = y - lastY;
+                    if (Math.abs(dx) < Math.abs(dy)) {
+                        isVertical = true;
+                    }
+                    break;
+                case MotionEvent.ACTION_CANCEL:
+                case MotionEvent.ACTION_UP:
+                    lastX = lastY = 0;
+                    break;
+
+            }
+            intercept = super.onInterceptTouchEvent(swapTouchEvent(event));
+            //If not intercept, touch event should not be swapped.
+            swapTouchEvent(event);
+        } catch (IllegalArgumentException e) {
+            //抓取滑动异常 do nothing
+//            e.printStackTrace();
+        }
+//        LogUtil.i("VerticalViewPager:"+event.toString()+"isVertial:"+isVertical+"intercept:"+intercept);
+        return intercept || isVertical;
     }
 
     @Override
