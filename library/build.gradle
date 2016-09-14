@@ -1,6 +1,4 @@
 apply plugin: 'com.android.library'
-apply from: 'android-artifacts.gradle'
-apply from: 'bintray.gradle'
 
 android {
     compileSdkVersion COMPILE_SDK_VERSION as int
@@ -42,3 +40,5 @@ dependencies {
     compile fileTree(dir: 'libs', include: ['*.jar'])
     compile "com.android.support:appcompat-v7:$SUPPORT_APP_COMPAT_VERSION"
 }
+
+apply from: './gradle-repo-push.gradle'

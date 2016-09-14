@@ -1,5 +1,7 @@
 VerticalViewPager
 ===
+[ ![Download](https://api.bintray.com/packages/isanwenyu/maven/VerticalViewPager/images/download.svg) ](https://bintray.com/isanwenyu/maven/VerticalViewPager/_latestVersion)
+
 This is forked from kaelaela/VerticalViewPager
  
 Optimization of VerticalViewPager
@@ -7,7 +9,7 @@ Optimization of VerticalViewPager
      <li>Catching ViewPager internal bug: java.lang.IllegalArgumentException: pointerIndex out of range {@link CatchExceptionViewPager} </li>
      <li>The vertical sliding optimization nesting {@link android.support.v4.view.ViewPager}</li>
   </ul>
- Edited by isanwenyu on 2016/9/13.<p>
+ Edited by isanwenyu on 2016/9/14.<p>
  Copyright (c) 2016 isanwenyu@163.com. All rights reserved.
  
  
@@ -20,6 +22,26 @@ Vertically ViewPager and vertically transformer for Android.
 This library is not copy ViewPager code. Extended class.
 
 ![default](art/default.gif) ![zoom_out](art/zoom_out.gif) ![stack](art/stack.gif)
+
+##Getting Started
+
+ - Add the dependency to your build.gradle.
+ 
+```
+dependencies {
+    compile 'com.isanwenyu.verticalviewpager:library:1.0.0'
+}
+```
+- Maven:
+
+```
+<dependency>
+  <groupId>com.isanwenyu.verticalviewpager</groupId>
+  <artifactId>library</artifactId>
+  <version>1.0.0</version>
+  <type>pom</type>
+</dependency>
+```
 
 ## Usage
 
@@ -34,15 +56,6 @@ viewPager.setPageTransformer(false, new DefaultTransformer());
 
 ```
 
-## Download from Gradle
-
-```groovy
-
-dependencies {
-    compile 'me.kaelaela:verticalviewpager:1.0.0@aar'
-}
-
-```
 
 ## Next
 
@@ -58,7 +71,7 @@ Yuichi Maekawa(Kaelaela)
 
 isanwenyu
 * github: [https://github.com/isanwenyu](https://github.com/isanwenyu)
-* email:[isanwenyu@163.com](isanwenyu@163.com)
+* email: [isanwenyu@163.com](isanwenyu@163.com)
 License
 -------
     Copyright (C) 2016 isanwenyu@163.com
