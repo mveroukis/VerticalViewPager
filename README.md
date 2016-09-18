@@ -29,7 +29,7 @@ This library is not copy ViewPager code. Extended class.
  
 ```
 dependencies {
-    compile 'com.isanwenyu.verticalviewpager:library:1.0.0'
+    compile 'com.isanwenyu.verticalviewpager:library:1.1.0'
 }
 ```
 - Maven:
@@ -38,7 +38,7 @@ dependencies {
 <dependency>
   <groupId>com.isanwenyu.verticalviewpager</groupId>
   <artifactId>library</artifactId>
-  <version>1.0.0</version>
+  <version>1.1.0</version>
   <type>pom</type>
 </dependency>
 ```
@@ -71,7 +71,8 @@ Yuichi Maekawa(Kaelaela)
 
 isanwenyu
 * github: [https://github.com/isanwenyu](https://github.com/isanwenyu)
-* email: [isanwenyu@163.com](isanwenyu@163.com)
+* email: [isanwenyu@163.com](isanwenyu@163.com)* 
+
 License
 -------
     Copyright (C) 2016 isanwenyu@163.com
